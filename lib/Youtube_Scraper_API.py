@@ -67,7 +67,7 @@ class youtube_music_channel_scraper_api:
         # only download videos which are uploaded after this date
         self.stop_upload_date = args.stop_upload_date # e.g.,'11 Mar 2023' 
         # only download videos which are uploaded after this video_id
-        self.stop_video_id = args.stop_video_id #'mpXkkqWK7wg'   # 
+        self.stop_video_id = args.stop_video_id #'mpXkkqWK7wg'   
         # rename the video titles for music videos
         self.rename_title = args.rename_title
         
@@ -76,7 +76,7 @@ class youtube_music_channel_scraper_api:
         self.update = args.update
         
         # add adblock plugin into webdriver.Firefox, which disable ads when browsering
-        self.adblock_add_on_path = args.adblock_add_on_path #
+        self.adblock_add_on_path = args.adblock_add_on_path 
         
         self.channel_ids_set = set()
         
@@ -846,10 +846,12 @@ class youtube_music_channel_scraper_api:
         video_url = "https://www.youtube.com/watch?v=" + video_id
             
         
-        driver2 = webdriver.Firefox(self.adblock_add_on_path, firefox_options=firefox_opts)
-        #driver2 = webdriver.Firefox(adblock_add_on_path)
+        if self.adblock_add_on_path:
+            driver2 = webdriver.Firefox(self.adblock_add_on_path, firefox_options=firefox_opts)
+        else:
+            driver2 = webdriver.Firefox(firefox_options=firefox_opts)
         
-        #driver2.implicitly_wait(3)
+        
         
         self._get_content_from_url(driver2, video_url)
         html = driver2.page_source
