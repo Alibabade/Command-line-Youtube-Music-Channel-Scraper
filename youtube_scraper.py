@@ -47,7 +47,7 @@ class scraper_by_given_artist_channels:
 
             channel_url = channel_urls[idx]
             self._process(channel_url)
-            a
+            
             
             execution_time = time.time() - start_time
             
@@ -81,7 +81,7 @@ def main():
     parser.add_argument("--music_channel_list_filepath",  default="../youtube_music_channel_list.txt")
     parser.add_argument("--saved_path",  default="../data/given_music_channels/")
     parser.add_argument("--download_file_format",  default="mp3")
-    parser.add_argument("--update",  default=True) # update already scraped channels
+    parser.add_argument("--update",  default=False) # update already scraped channels
     parser.add_argument("--adblock_add_on_path",  default=None,
                         help="path to adblock plugin")
     

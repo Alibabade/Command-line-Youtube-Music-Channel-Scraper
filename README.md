@@ -4,6 +4,12 @@ This program scrapes the given Youtube music channels by fetching infomation of 
 
 ## Features
 
+- [x] Automatically Resume Scraping Process
+- [x] Update Channels Scraped
+- [x] Download Images From Various Image Websites (e.g., Artstation, Pixix, Deviantart, Pexels, Unsplash, Flickr)
+- [x] Automatically Rename Video Titles (Optional)
+
+
 ### Automatically Resume Scraping and Downloading Processes.
 Normally, scraping a big music channel (e.g., MrSuicideSheep) could take hours (or even longer) as the channel contains over thousands of videos.
 Thus the scraping and downloading process could be easily interrupted by anything, for example, power failure or poor internet connection, or coffee leak (even worse :) ).
@@ -27,6 +33,13 @@ There are three senarios in resume scheme:
 To automatically resume the video downloading process, this program will deal with this problem by checking the number of files under one video folder.
 For videos without chapters, the file number under a video folder should be the number of items downloaded. For example, usually, the files of a video folder should contains an artwork image (if recorded under the same video title in "channel_videos_info_list.json"), a thumbnail and a video file, thus if file number is lower than 3, then the downloading process will resume from downloading the files not exist. For videos with chapters, the file number should be 3 + number of chapters. If the number of files is lower than that, the downloading process will resume from downloading the files not exist.
 
+### Update Channels Already Scraped
+Setting up flag "--update True" when running program will automatically update these two files: "channel_videos_id_list.txt" and "channel_videos_info_list.json", and download new videos.
+
+### Image Downloader for Various Image Websites
+
+Several downloaders are implemented in "lib/Youtube_Scraper_API.py" file. Currently, this program is able to download images from Websites: Artstation, Pixix, Deviantart, Pexels, Unsplash, Flickr.
+
 
 ### Automatically Rename Video Titles (Optional)
 
@@ -34,14 +47,13 @@ During the development, an interesting problem is observed that the video titles
     "artist_usernames - song_name (feat./with/prod. by/cover by artist_usernames) + (artist_usernames remix/mix/flip/cover) + [ncs release]"
 where the words in bracket "[]" are essential while the words in bracket "{}" are optional.
 
-### Update Channels Already Scraped
-Setting up flag "--update True" when running program will automatically update these two files: "channel_videos_id_list.txt" and "channel_videos_info_list.json", and download new videos.
+
 
 ## Setups
 
-1. Please install youtube-dl for video (or audio) downloading.
+1. Please install youtube-dl for video (or audio) download.
 2. Please install all the other necessary libraries in "requirements.txt" before starting the program.
-3. (Optional) An adblock plugin could be installed via Firefox browser as this will disable the ads when scraping the video webpage (save times).
+3. (Optional) An adblock plugin could be installed via Firefox browser as this will disable the ads when scraping the video webpages (this could save lots of times).
 
 
 ## Examples
@@ -62,3 +74,7 @@ Running this example, a folder will be created if saved_path not exists, then "c
        --update True
        
 Running this example, channels that already scraped and downloaded will be updated by re-scraping the information of channels, and downloading new videos. 
+
+### Optional Flags
+
+Set "--rename_title" as True, then all video titles will be automatically reformed into the unified format described above.
