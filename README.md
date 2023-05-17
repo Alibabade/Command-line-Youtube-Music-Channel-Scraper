@@ -6,7 +6,7 @@ This program scrapes the given Youtube music channels by fetching infomation of 
 
 - [x] Automatically Resume Scraping Process
 - [x] Update Channels Scraped
-- [x] Download Images From Various Image Websites (e.g., Artstation, Pixix, Deviantart, Pexels, Unsplash, Flickr)
+- [x] Download Images From Various Image Websites (e.g., Artstation, Pixiv, Deviantart, Pexels, Unsplash, Flickr)
 - [x] Automatically Rename Video Titles (Optional)
 
 
