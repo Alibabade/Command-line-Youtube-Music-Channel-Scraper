@@ -1,6 +1,6 @@
 # Commnad-line Program Youtube Music Channel Scraper
 
-This program scrapes the given Youtube music channels by fetching infomation of videos, and saving information and videos into local drives. The program are currently only avaiable for downloading artwork images (if applicable), thumbnails, audios (mp3 format) and videos.
+This program scrapes the given Youtube music channels by fetching infomation of videos, and saving information and videos into local drives. The program is currently only avaiable for downloading artwork images (if applicable), thumbnails, audios (mp3 format) and videos.
 
 ## Features
 
