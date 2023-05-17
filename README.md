@@ -38,7 +38,7 @@ Setting up flag "--update True" when running program will automatically update t
 
 ### Image Downloader for Various Image Websites
 
-Several downloaders are implemented in "lib/Youtube_Scraper_API.py" file. Currently, this program is able to download images from Websites: Artstation, Pixix, Deviantart, Pexels, Unsplash, Flickr.
+Several downloaders are implemented in "lib/Youtube_Scraper_API.py" file. Currently, this program is able to download images from Websites: Artstation, Pixiv, Deviantart, Pexels, Unsplash, Flickr.
 
 
 ### Automatically Rename Video Titles (Optional)
